@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<head>
+
+    <style>
+        span{
+            display: inline-block;
+            background: black;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <button type="button">send</button>
+    <span>sd</span>
+    <span>sd</span>
+    <span>sd</span>
+    <script>
+        var btnSend = document.getElementsByTagName('button')[0];
+        var boxex = document.getElementsByTagName('span');
+        btnSend.onclick = function(){
+        for(var i=0; i<boxex.length;i++){
+            boxex[i].style.background = 'red';
+        }
+
+        }
+    </script>
+    
+
+</body>
+</html>

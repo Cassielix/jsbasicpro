@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrap{
+            border: 1px solid #000;
+        }
+        ul#nav {
+            list-style-type: none;
+            background: #000;
+            color: #fff;
+            display: flex;
+        }
+        ul#nav li{
+            padding: 5px 30px;
+        }
+       .current{
+            background: #555;
+        }
+        #content{
+            position: relative;
+        }
+        #content ul{
+            position:absolute;
+            display: none;
+        }
+
+    </style>
+
+
+</head>
+
+
+<body>
+    <div class="wrap">
+        <ul id="nav">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+        </ul>
+        <div id="content">
+            <ul>
+                <li>1</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+            </ul>
+            <ul>
+                <li>2</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+            </ul>
+            <ul>
+                <li>3</li>
+                <li>thank</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+                <li>wsdfsdfs</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // var nav = document.getElementById('nav');
+        // var navLi = nav.getElementsByTagName('li');
+        // var content = document.getElementById('content');
+        // var ulist = content.getElementsByTagName('ul');
+
+        // for(var i=0;i<navLi.length; i++){
+        //     navLi[i].index = i;
+        //     navLi[i].onmouseover = function(){
+        //         ulist[this.index].style.display = 'block';
+        //     }
+        //     navLi[i].onmouseleave = function(){
+        //         ulist[this.index].style.display = 'none';
+        //     }
+
+        // }
+        var oLi = document.getElementById('nav').getElementsByTagName('li');
+        var oUl = document.getElementById('content').getElementsByTagName('ul');
+        for(var i=0; i<oLi.length;i++){
+            oLi[i].index = i;
+            oLi[i].onmouseover = function(){
+                for( var n = 0; n<oLi.length;n++) oLi[n].className = '';
+                this.className = 'current';
+                for( var n = 0; n<oUl.length;n++) oUl[n].style.display = 'none';
+                oUl[this.index].style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

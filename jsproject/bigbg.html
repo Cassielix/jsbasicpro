@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background: url(../img/a.jpg) 0 0 no-repeat;
+        }
+
+        #changeBackBtn {
+            position: absolute;
+            left: 20%;
+            top: 50%;
+            bottom: 50%;
+            background: #888;
+            width: 100px;
+            height: 200px;
+            display: none;
+        }
+
+        #gallery {
+            display: none;
+        }
+
+        #image {
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            top: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 550px;
+            border: 1px solid #000;
+            background: #888;
+        }
+
+        #image img {
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #image img:hover {
+            border: 1px solid #fff;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="changeBackBtn">change background image</div>
+    <div id="gallery">
+        <h3>background</h3>
+        <div id="image">
+            <img src="../img/a.jpg">
+            <img src="../img/b.jpg">
+            <img src="../img/c.jpg">
+            <img src="../img/d.jpg">
+            <img src="../img/e.jpg">
+            <img src="../img/f.jpg">
+        </div>
+    </div>
+    <script>
+        var changeBackBtn = document.getElementById('changeBackBtn');
+        var gallery = document.getElementById('gallery');
+        var imageAll = document.getElementById('image');
+        var imageitem = imageAll.getElementsByTagName('img');
+        document.oncontextmenu = function () {
+            changeBackBtn.style.display = 'block';
+        }
+        changeBackBtn.onclick = function () {
+            gallery.style.display = 'block';
+        }
+        for (var i = 0; i < imageitem.length; i++) {
+            imageitem[i].onclick = function(){
+            document.body.style.background = 'url(' + this.src +')';
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

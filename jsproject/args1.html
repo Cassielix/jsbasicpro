@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #calendar {
+            width: 248px;
+            overflow: hidden;
+            margin: 0 auto;
+            background: #ddd;
+        }
+
+        ul li {
+            border: 1px solid gray;
+            padding: 10px;
+            margin: 6px 3px;
+            background: black;
+            color: #fff;
+        }
+
+        .current {
+            background: red;
+            color: blue;
+            border: 1px solid black;
+        }
+
+        #msg {
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="calendar">
+        <ul>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li class="current"><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+        </ul>
+        <div id="msg">
+            <h5>6</h5>
+            <p>端午节：塑料袋开飞机</p>
+        </div>
+    </div>
+    <script>
+        window.onload = function(){
+            var arrMon = [
+                'janu',
+                'feb',
+                'mar',
+                'apr',
+                'march',
+                'june',
+                'july',
+                'agu',
+                'sep',
+                'oct',
+                'noc',
+                'dec'
+            ]
+            var months = document.getElementsByTagName('li');
+            var msg = document.getElementById('msg'); 
+            var headerDesc = msg.getElementsByTagName('h5')[0];
+            var para= msg.getElementsByTagName('p')[0];
+            for(var i=0; i<months.length; i++){
+                months[i].index = i;
+                months[i].onmouseover = function(){
+                    para.innerHTML = arrMon[this.index];
+                    headerDesc.innerHTML = this.index + 1;
+                    this.className = 'current';
+                }
+                months[i].onmouseleave = function(){
+                    this.className = '';
+                }
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>

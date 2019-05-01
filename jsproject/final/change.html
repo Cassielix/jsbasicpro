@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<heade>
+
+    <style>
+        ul{
+            list-style-type: none;
+            display: flex;
+        }
+        li{
+            
+            width: 30px;
+            height: 30px;
+             text-indent: -9999px;
+        }
+        .red{
+            background: rgb(218, 15, 15);
+        }
+        .green{
+            background: rgb(11, 230, 11);
+        }
+        .black{
+           background: rgb(36, 32, 32); 
+        }
+    </style>
+</heade>
+
+<body>
+
+    <ul>
+        <li class="red">red</li>
+        <li class="green">red</li>
+        <li class="black">red</li>
+
+    </ul>
+    <script>
+        var list = document.getElementsByTagName('li');
+        var body1 = document.getElementsByTagName('body')[0]; 
+        for(var i=0;i<list.length;i++){
+            list[i].onclick = function(){
+               body1.setAttribute('class',this.className);
+               this.style.border = '4px solid #fff';
+            }
+        }
+    </script>
+</body>
+
+</html>

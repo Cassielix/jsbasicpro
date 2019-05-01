@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .wrap{
+                width:300px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+            }
+            .wrap *{
+                margin-left:2px;
+                padding: 10px 10px;
+                border: none;
+            }
+            #code{
+                flex: 1;
+                text-decoration:none;
+                text-transform: uppercase;
+                color: #fff;
+                background: #678;
+                letter-spacing: 2px;
+            }
+           .wrap input{
+                border: 1px solid #000; 
+                width: 100px;
+            }
+            #btn{
+                background: #097;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+
+            <input type="text" id="text" placeholder="pls fill">
+            <a href="javascript:" id="code" onclick="createCode()"></a>
+            <button type="button" id="btn">check</button>
+        </div>
+        
+        <script>
+            var oInput = document.getElementById('text');
+            var oBtn = document.getElementById('btn');
+            var checkCode = document.getElementById('code');
+            var random = [0,1,2,3,4,5,6,7,8,9,0,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+            var code = '';
+          function createCode(){
+                code = '';
+                var codeLength = 8;
+                for(i=0;i<codeLength;i++){
+                    var index = Math.floor(Math.random() * 36);
+                    code += random[index];
+                }
+                checkCode.innerHTML = code;
+            }
+            oBtn.onclick= function(){
+                var content = oInput.value.toUpperCase();
+                (content =='') ? alert('wrong') : (content != checkCode.innerHTML) ? (alert('not') + createCode()) : (window.open('http://www.baidu.com'));
+            } 
+            window.onload = createCode();
+            
+
+        
+        </script>
+
+    </body>
+</html>

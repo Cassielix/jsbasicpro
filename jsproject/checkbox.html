@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+
+    <style>
+        .checkbox {
+            width: 200px;
+            border: 1px solid black;
+            padding: 5px;
+
+        }
+
+        .btns {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="checkbox">
+        <div id="controlBtn">
+            <input type="checkbox" value="all" id="btnAll">
+            <laber>all</laber>
+            <span id="reserve">reserve</span>
+        </div>
+        <div id="btns">
+            <p><input type="checkbox"><label>one</label></p>
+            <p><input type="checkbox"><label>one</label></p>
+            <p><input type="checkbox"><label>one</label></p>
+            <p><input type="checkbox"><label>one</label></p>
+            <p><input type="checkbox"><label>one</label></p>
+            <p><input type="checkbox"><label>one</label></p>
+            <p><input type="checkbox"><label>one</label></p>
+            <p><input type="checkbox"><label>one</label></p>
+        </div>
+    </div>
+    <ul>
+        <li>dfs</li>
+        <li>dfs</li>
+        <li>dfs</li>
+        <li>dfs</li>
+    </ul>
+    <script>
+        window.onload = function () {
+            var btnAll = document.getElementById('btnAll');
+            var btns = document.getElementById('btns');
+            var btnitem = btns.getElementsByTagName('input');
+            // for(var i=0; i<btnitem.length;i++){
+            //     btnAll.onclick = function(){
+            //     btnitem[1].checked = this.checked;
+            //     }
+            // }
+                
+
+        }
+
+    </script>
+</body>
+
+</html>

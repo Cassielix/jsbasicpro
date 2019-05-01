@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+
+    <style>
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            background: #555;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button type="button">输入法</button>
+    <ul id="toggle">
+        <li>yingyu</li>
+        <li>hanzi</li>
+        <li>close</li>
+    </ul>
+    <script>
+        var btn = document.getElementsByTagName('button')[0];
+        var toggle = document.getElementsByTagName('li');
+        btn.onclick = function () {
+            var ulist = document.getElementById('toggle');
+            ulist.style.display = ulist.style.display == 'block' ? 'none' : 'block';
+            toggle[toggle.length - 1].onclick = function () {
+                ulist.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

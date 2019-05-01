@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+
+    <style>
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background: black;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button type="button">width</button>
+    <button type="button">height</button>
+    <button type="button">color</button>
+    <button type="button">hide</button>
+    <button type="button">reset</button>
+    <div id="div1" class="div1"></div>
+    <script>
+        window.onload = function () {
+            var arrPro = ['width', 'height', 'background', 'display', 'display'];
+            var arrValue = ['200px', '200px', 'blue', 'none', 'block'];
+            var btns = document.getElementsByTagName('button');
+            var oDiv = document.getElementById('div1');
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].index = i;
+                btns[i].onclick = function () {
+                    oDiv.style[arrPro[this.index]] = arrValue[this.index];
+                }
+                btns[btns.length - 1].onclick = function () {
+                    oDiv.removeAttribute('style');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

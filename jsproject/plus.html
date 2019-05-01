@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <input type="button" value="0">
+    <script>
+        var btn = document.getElementsByTagName('input')[0];
+            var i=0;
+        btn.onclick = function(){
+            // var btnvalue = Number(btn.value);
+            // var newvalue =++btnvalue; 
+            // alert(newvalue);
+            // btn.value = newvalue.toString();
+            btn.value = ++i;
+            alert(i);
+
+        }
+    </script>
+</body>
+</html>

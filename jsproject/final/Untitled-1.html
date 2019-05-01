@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        ul#rili {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 300px;
+        }
+
+        ul li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #000;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px 10px 0;
+        }
+
+        .current {
+            background: #fff;
+            color: rgb(236, 30, 157);
+            border: 1px solid gray;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <ul id="rili">
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+            <li><span>1</span><span>jan</span></li>
+        </ul>
+        <div id="detail">
+            <P>1月节日</P>
+            <p>jane</p>
+        </div>
+    </div>
+    <script>
+        var arrMon = ['jan', 'feb', 'mar', 'apr', 'march', 'july', 'june', 'aug', 'sep', 'noc', 'dec', 'noc'];
+        var liMon = document.getElementById('rili').getElementsByTagName('li');
+        var paras = document.getElementById('detail').getElementsByTagName('p');
+        for (var i = 0; i < liMon.length; i++) {
+            liMon[i].index = i;
+            liMon[i].onmouseover = function () {
+                for (var n = 0; n < liMon.length; n++) liMon[n].className = '';
+                this.className = 'current';
+                paras[0].innerHTML = this.index + 1 + '月节日';
+                paras[1].innerHTML = arrMon[this.index];
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>

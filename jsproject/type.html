@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #082;
+            width: 60px;
+            display: none;
+        }
+
+        ul li:hover {
+            background: #456;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p><input type="button" value="输入法"></p>
+    <ul id="toggle">
+        <li>手写</li>
+        <li>拼音</li>
+        <li id="closeBtn">close</li>
+    </ul>
+    <script>
+        document.getElementsByTagName('input')[0].onclick = function () {
+            var ulist = document.getElementById('toggle');
+            // if (ulist.className) {
+            //     ulist.className = '';
+            // } else {
+            //     ulist.className = 'show';
+            // }
+            ulist.className = ulist.className == 'show' ? '' : 'show';
+            var liItme = document.getElementsByTagName('li');
+            var liLast = liItme[liItme.length - 1];
+            liLast.onclick = function () {
+                ulist.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

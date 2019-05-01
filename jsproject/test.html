@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input type="text"> + <input type="text">
+    <span> ? </span>
+    <input type="button" value="sum">
+    <script>
+        var aInput = document.getElementsByTagName('input');
+        var oSpan = document.getElementsByTagName('span')[0];
+        for (var i = 0; i < aInput.length - 1; i++) {
+            aInput[i].onkeyup = function () {
+                this.value = this.value.replace(/[^\d]/, '');
+            }
+        }
+        aInput[2].onclick = function () {
+            (aInput[0].value == '' || aInput[1].value == '') ? alert('shurushuzi'):
+                (oSpan.innerHTML = parseInt(aInput[0].value) + parseInt(aInput[1].value))
+
+        }
+    </script>
+</body>
+
+</html>

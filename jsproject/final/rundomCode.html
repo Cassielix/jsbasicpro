@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #wrap {
+            width: 300px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #wrap * {
+            padding: 5px 10px;
+            margin-left: 10px;
+        }
+
+        #code {
+            flex: 1;
+            background: #555;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input {
+            width: 80px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrap">
+        <input type="text" placeholder="请输入验证码">
+        <a href="javascript:" id="code" onclick="createCode(this)"></a>
+        <button type="button">yanzheng</button>
+    </div>
+    <script>
+            var oInput = document.getElementsByTagName('input')[0];
+            var oCode = document.getElementById('code');
+            var oBtn = document.getElementsByTagName('button')[0];
+            var code = '';
+
+
+            function createCode() {
+                code = '';
+                var codeLength = 6;
+                var random = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+                    'K',
+                    'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+                ];
+                for (var i = 0; i < codeLength; i++) {
+                    var index = Math.floor((Math.random() * 36));
+                    code += random[index];
+
+                }
+                oCode.innerHTML = code;
+            }
+
+
+        oBtn.onclick = function () {
+            var input = oInput.value.toUpperCase();
+            input == '' ? alert('kong') : (input == oCode.innerHTML ? window.open('http://www.baidu.com') : (alert(
+                'not right') + createCode()))
+
+        }
+
+    </script>
+</body>
+
+</html>

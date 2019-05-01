@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        #clock {
+            width: 300px;
+            height: 100px;
+            background:yellow;
+        }
+
+        span {
+            color: #000;
+            width: 30px;
+            background: #fff;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <input type="button" value="yes or no">
+    <script>
+        var aInput = document.getElementsByTagName('input');
+        aInput[1].onclick = function(){
+            (aInput[0].value == '') ? alert('no') : alert('this is' + aInput[0].value.length +'weishu');
+        }
+    </script>
+</body>
+
+</html>

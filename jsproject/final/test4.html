@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        #alertfix {
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            bottom: 100px;
+            left: 48%;
+            right: 50%;
+            background: red;
+            display: none;
+            opacity: 1;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            text-indent: -9999px;
+            width: 20px;
+            height: 20px;
+            background: green;
+        }
+
+        .changeBack {
+            background: #777;
+            opacity: 0.2;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button type="button">click</button>
+    <div id="alertfix">
+        <span>dsfsdf</span>
+    </div>
+    <script>
+        var btn = document.getElementsByTagName('button')[0];
+        var alertbox = document.getElementById('alertfix');
+        var togglebtn = alertbox.getElementsByTagName('span')[0];
+        var changeBack = document.getElementsByTagName('body')[0];
+        btn.onclick = function () {
+            alertbox.style.display = alertbox.style.display == 'block' ? 'none' : 'block';
+            changeBack.setAttribute('class', 'changeBack');
+        }
+
+        togglebtn.onclick = function () {
+            alertbox.style.display = 'none';
+            changeBack.removeAttribute('class', 'changeBack');
+        }
+    </script>
+</body>
+
+</html>

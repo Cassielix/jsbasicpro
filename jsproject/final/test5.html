@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        #testbox {
+            width: 100px;
+            height: 100px;
+            background: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p><label>name:</label><input type="text"></p>
+    <p><label>value:</label><input type="text"></p>
+    <button type="button">yes</button>
+    <button type="button">reset</button>
+    <div id="testbox"></div>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        var inputBtn = document.getElementsByTagName('input');
+        var testbox = document.getElementById('testbox');
+        btns[0].onclick = function () {
+            testbox.style[inputBtn[0].value] = inputBtn[1].value;
+        };
+        btns[1].onclick = function () {
+            testbox.removeAttribute('style', inputBtn[0].value);
+        }
+    </script>
+
+</body>
+
+</html>

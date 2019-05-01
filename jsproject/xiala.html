@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            border: 1px solid gray;
+            background: rgb(194, 197, 191);
+            width: 200px;
+            font-size: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            color: #533;
+        }
+
+        ul li {
+            position: relative;
+            overflow: hidden;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li class="top">播放列表...<span></span></li>
+        <li><a href="#">caiyilin</a></li>
+        <li><a href="#">caiyilin</a></li>
+        <li><a href="#">caiyilin</a></li>
+        <li><a href="#">caiyilin</a></li>
+        <li><a href="#">caiyilin</a></li>
+        <li><a href="#">caiyilin</a></li>
+    </ul>
+
+    <script>
+        var btnbox = document.getElementsByTagName('span')[0];
+        var lists = document.getElementsByTagName('ul')[0].getElementsByTagName('li');
+        btnbox.onclick = function () {
+            for (var i = 0; i < lists.length; i++) {
+                lists[i].style.display = lists[i].style.display == 'none' ? 'block' : 'none';
+                lists[0].style.display = 'block';
+
+            }
+        }
+    </script>
+</body>
+
+</html>
